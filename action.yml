@@ -3,7 +3,14 @@ description: 'Make a "line of codes" badge for your repo.'
 runs:
   using: "composite"
   steps:
-    - uses: actions-rs/cargo@v1
+    - run: echo $PWD
+      shell: bash
+    - run: ls ${{ github.action_path }}
+      shell: bash
+    - uses: actions-rs/toolchain@v1
       with:
-        command: build
-        args: --release --all-features
+        toolchain: stable
+    - run: cd ${{ github.action_path }} && /home/runner/.cargo/bin/cargo build --release --all-features
+      shell: bash
+    - run: ${{ github.action_path }}/target/release/tokei_badge
+      shell: bash
