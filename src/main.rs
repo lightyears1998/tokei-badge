@@ -52,7 +52,7 @@ fn main() -> std::io::Result<()> {
 
     let mut out_dir = std::env::current_dir()?;
     out_dir.push("out");
-    std::fs::create_dir(&out_dir);
+    std::fs::create_dir(&out_dir)?;
 
     rsbadges::save_svg(&(out_dir.as_path().to_str().unwrap().to_owned() + "/badge.svg"), &badge_svg);
 
