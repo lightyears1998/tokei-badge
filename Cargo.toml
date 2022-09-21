@@ -1,0 +1,8 @@
+[package]
+name = "tokei_badge"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+tokei = "12.1.2"
+rsbadges = "1.1.2"
