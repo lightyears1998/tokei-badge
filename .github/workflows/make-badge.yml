@@ -1,10 +1,10 @@
 on: [push]
 
-name: CI
+name: Make Badge
 
 jobs:
-  build_and_test:
-    name: Test Action
+  make-badge:
+    name: Make Badge
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
