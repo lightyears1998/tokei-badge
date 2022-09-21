@@ -1,0 +1,9 @@
+name: 'Tokei Badge'
+description: 'Make a "line of codes" badge for your repo.'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --release --all-features
