@@ -1,10 +1,10 @@
 on: [push]
 
-name: Make Badge
+name: Make the Badge
 
 jobs:
   make-badge:
-    name: Make Badge
+    name: Make the Badge
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,7 +12,7 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
-      - name: Generate a Lines of Code Badge
+      - name: Generate the "Lines of Code" Badge
         uses: lightyears1998/tokei-badge@master
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
