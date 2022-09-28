@@ -11,6 +11,8 @@ runs:
       with:
         toolchain: stable
     - uses: Swatinem/rust-cache@v2
+      with:
+        workspaces: ${{ github.action_path }}
     - run: cd ${{ github.action_path }} && /home/runner/.cargo/bin/cargo build --release --all-features
       shell: bash
     - run: ${{ github.action_path }}/target/release/tokei_badge
